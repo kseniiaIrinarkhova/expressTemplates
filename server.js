@@ -41,6 +41,12 @@ app.get('/:name/:favNumber', (req,res)=>{
 
 })
 
+app.get('/pugpic',(req,res)=>{
+    console.log("It works!")
+    res.download('./static/pug.png', 'pug.png')
+    // res.sendStatus(200)
+})
+
 //listening
 app.listen(PORT, ()=>{
     console.log(`Server is listening on port: ${PORT}.`)

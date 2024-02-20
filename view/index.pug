@@ -1,7 +1,9 @@
 html(lang='en')
     head
         title #{pageTitle}
+        script(type='text/javascript' src='client.js' defer)
     body 
         h1 Welcome to simple Express Application with Pug - node template engine 
-        p Add your name and favorite number devided by '/' into the URL
+        p Add your name and favorite number divided by '/' into the URL
         img(src='pug.png' alt="pug" style="height: 200px")
+        button( id='download') Download Pug!
