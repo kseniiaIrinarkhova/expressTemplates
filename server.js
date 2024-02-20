@@ -26,6 +26,18 @@ app.get("/", (req,res)=>{
 })
 
 app.get('/:name/:favNumber', (req,res)=>{
+    const user = req.params.name
+    const num = req.params.favNumber
+    let sum = 0;
+    Array.prototype.forEach.call(num, (digit) => {
+        sum += parseInt(digit)
+    });
+    res.send(pug.renderFile('./view/user.pug', { 
+        pageTitle: `${user} Fansy Page`,
+        userName: user,
+        favNum: num,
+        sum: sum
+     }))
 
 })
 
