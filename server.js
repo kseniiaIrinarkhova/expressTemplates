@@ -1,5 +1,9 @@
 const express = require("express");
 const responseTime = require('response-time');
+const pug = require("pug");
+
+const fs = require("fs");
+
 
 const app = express();
 
@@ -18,9 +22,12 @@ app.use((err, req, res, next) => {
 //routes
 
 app.get("/", (req,res)=>{
-    res.send("Hello Express!")
+    res.send(pug.renderFile('./view/index.pug', { pageTitle: 'Express App' }))
 })
 
+app.get('/:name/:favNumber', (req,res)=>{
+
+})
 
 //listening
 app.listen(PORT, ()=>{
