@@ -12,7 +12,7 @@ const PORT = 3000;
 
 //Middleware
 app.use(responseTime());
-
+app.use(express.static('./static'))
 
 
 // error handler
